@@ -16,7 +16,7 @@ I'm **Bhaskar**, a backend engineer at **Accenture**, previously at **TCS**, bas
 
 **Personal project · Active development**
 
-An e-commerce backend with customer, product, order, payment and notification services, built using Java, Spring Boot, Spring Cloud and Kafka.
+An e-commerce backend with customer, product, order, payment and notification services, built using Java, Spring Boot, Spring Cloud and Kafka. **HTTP coordinates the order Saga; Kafka carries asynchronous notifications.**
 
 - Coordinate orders, inventory reservations and payments through a **Saga with compensating actions**.
 - Publish payment events through a **transactional outbox**, with idempotent payment operations and Kafka notifications.
@@ -26,7 +26,17 @@ An e-commerce backend with customer, product, order, payment and notification se
 
 **Explore the code:** [Saga recovery jobs](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/order/src/main/java/com/forsaken/ecommerce/order/batch/SagaRecoveryBatchConfig.java) · [Payment outbox publisher](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/payment/src/main/java/com/forsaken/ecommerce/payment/service/PaymentOutboxPublisher.java) · [Catalog batch jobs](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/product/src/main/java/com/forsaken/ecommerce/product/batch/CatalogBatchConfig.java)
 
-**Next milestones:** cloud deployment and CI/CD.
+### Engineering decisions you can inspect
+
+| Problem | Approach in the implementation | Evidence |
+| --- | --- | --- |
+| Payment commits while event publication fails | Save payment state and its outbox event in one transaction; retry publication and quarantine invalid payloads | [Outbox code](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/payment/src/main/java/com/forsaken/ecommerce/payment/service/PaymentOutboxPublisher.java) · [Failure tests](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/payment/src/test/java/com/forsaken/ecommerce/payment/service/PaymentOutboxPublisherTest.java) |
+| Confirmation times out or a recovery worker loses its claim | Use a forward recovery phase and guard Saga state transitions with persisted claims | [Saga code](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/order/src/main/java/com/forsaken/ecommerce/order/order/service/OrderServiceImpl.java) · [Recovery tests](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/order/src/test/java/com/forsaken/ecommerce/order/order/service/OrderServiceImplTest.java) |
+| Reconciliation cannot reach another service | Retry or skip the lookup; do not report an unavailable dependency as a missing business record | [Reconciliation code](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/order/src/main/java/com/forsaken/ecommerce/order/order/service/OrderReconciliationService.java) · [Rule tests](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/order/src/test/java/com/forsaken/ecommerce/order/order/service/OrderReconciliationServiceTest.java) |
+
+**[Read the engineering case study →](https://github.com/BKD471/EventDrivenEcommerceMicroServices/blob/master/docs/engineering-case-study.md)** — architecture, consistency boundaries, trade-offs and existing test scenarios.
+
+**Next milestones:** CI with published test results, repeatable failure exercises, cloud deployment and measured latency/recovery behavior.
 
 ## Professional work
 
@@ -34,7 +44,7 @@ An e-commerce backend with customer, product, order, payment and notification se
 
 **Accenture · Corporate banking · Backend modernization**
 
-I contribute to payment-system integrations and the migration of backend workloads from AWS to Azure. My work includes:
+I contribute to payment-system integrations and the migration of backend workloads from AWS to Azure, with work across application compatibility, storage integration, scheduled processing and deployment preparation. My contribution areas include:
 
 - **Java 21 and Spring Boot 4 modernization**, dependency updates and compatibility changes.
 - **S3-to-Azure Blob Storage migration** as part of the wider cloud migration.
