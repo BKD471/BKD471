@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Bhaskar Kumar Das — Senior Backend Engineer</title>
+  <desc id="desc">Java, Spring Boot, Kafka, AWS and Azure. Payments, event-driven services and cloud modernization.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1727"/>
+      <stop offset="1" stop-color="#162b3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#72e0d3"/>
+      <stop offset="1" stop-color="#89baf4"/>
+    </linearGradient>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M38 0H0V38" fill="none" stroke="#d2e7f8" stroke-opacity="0.035"/>
+    </pattern>
+    <clipPath id="bounds"><rect width="1200" height="320" rx="22"/></clipPath>
+  </defs>
+  <g clip-path="url(#bounds)">
+    <rect width="1200" height="320" rx="22" fill="url(#background)"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+    <ellipse cx="1100" cy="150" rx="280" ry="240" fill="#6bb9ce" opacity="0.035"/>
+    <path d="M900 -40C775 100 920 220 790 365M1050 -45C925 100 1070 220 940 365M1200 -45C1075 100 1220 220 1090 365" fill="none" stroke="#8bd6d6" stroke-width="1.5" stroke-opacity="0.13"/>
+    <rect x="48" y="43" width="38" height="4" rx="2" fill="url(#accent)"/>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <text x="99" y="50" fill="#9db2c9" font-size="14" font-weight="700" letter-spacing="2.4">JAVA BACKEND · DISTRIBUTED SYSTEMS</text>
+      <text x="48" y="124" fill="#f4f7fb" font-size="52" font-weight="700" letter-spacing="-1">Bhaskar Kumar Das</text>
+      <text x="49" y="168" fill="#c1d1e4" font-size="25">Senior Backend Engineer</text>
+      <g font-size="15" font-weight="700" fill="#d6e9f3">
+        <rect x="48" y="198" width="70" height="32" rx="7" fill="#183740" stroke="#5abdb4" stroke-opacity="0.4"/>
+        <text x="83" y="219" text-anchor="middle">JAVA</text>
+        <rect x="128" y="198" width="136" height="32" rx="7" fill="#1b2e42" stroke="#7899bd" stroke-opacity="0.35"/>
+        <text x="196" y="219" text-anchor="middle">SPRING BOOT</text>
+        <rect x="274" y="198" width="86" height="32" rx="7" fill="#1b2e42" stroke="#7899bd" stroke-opacity="0.35"/>
+        <text x="317" y="219" text-anchor="middle">KAFKA</text>
+        <rect x="370" y="198" width="70" height="32" rx="7" fill="#1b2e42" stroke="#7899bd" stroke-opacity="0.35"/>
+        <text x="405" y="219" text-anchor="middle">AWS</text>
+        <rect x="450" y="198" width="87" height="32" rx="7" fill="#1b2e42" stroke="#7899bd" stroke-opacity="0.35"/>
+        <text x="493.5" y="219" text-anchor="middle">AZURE</text>
+      </g>
+      <text x="49" y="276" fill="#90a7be" font-size="16">Payments · Event-driven services · Cloud modernization</text>
+      <text x="1148" y="51" fill="#8ca7be" font-size="12" font-weight="700" letter-spacing="2" text-anchor="end">KOLKATA, INDIA</text>
+      <text x="1005" y="211" text-anchor="middle" fill="#9fd2e0" fill-opacity="0.13" font-size="126" font-weight="700" font-family="Consolas, monospace">&lt;/&gt;</text>
+      <text x="1148" y="278" text-anchor="end" fill="#77ccc8" font-size="13" font-weight="700" letter-spacing="2">BKD471</text>
+    </g>
+    <rect x="0.75" y="0.75" width="1198.5" height="318.5" rx="21" fill="none" stroke="#496075" stroke-opacity="0.36" stroke-width="1.5"/>
+  </g>
+</svg>
