@@ -38,7 +38,7 @@ An e-commerce backend with customer, product, order, payment and notification se
 
 **Next milestones:** CI with published test results, repeatable failure exercises, cloud deployment and measured latency/recovery behavior.
 
-## Professional work
+## Professional Work
 
 ### OP Online Payments — Vendor API Solution (VAPI)
 
@@ -51,6 +51,27 @@ I contribute to payment-system integrations and the migration of backend workloa
 - API client generation with **OpenAPI Generator and Mustache templates**, plus mocks and integration/migration testing.
 - Billing and database-cleanup batch workloads for **Kubernetes CronJobs**, including JDBC execution locking and idempotent processing.
 - **AKS deployment preparation** using Kubernetes, Helm and Azure Key Vault, alongside API authentication, callback signing and certificate configuration.
+
+### Sainsbury's — Purchase Order Management & Direct-to-Store Integration
+
+**Tata Consultancy Services (TCS) · Systems Engineer · Retail and supply chain**  
+**Employment: April 2021 – June 2024**
+
+I worked on Java backend services for Sainsbury's retail systems. The project architecture connected order-plan ingestion with purchase-order validation, enrichment, execution, receipt tracking and end-of-day closure. My contribution areas included:
+
+- Developing **Java and Spring Boot services** for retail workflows spanning orders, inventory, payments and notifications.
+- Implementing **Kafka messaging across six services** with **Amazon MSK, Avro and Schema Registry**.
+- Containerizing and deploying backend services using **Docker and Amazon ECS Fargate**.
+- Building **AWS Lambda workflows** integrated with **Amazon Aurora, DynamoDB and S3**.
+- Adding **CloudWatch monitoring and AWS X-Ray tracing**, and contributing to deployment and API performance improvements.
+
+#### Architecture overview
+
+![Sainsbury's purchase-order management: Kafka and S3 inputs, capture and preparation, purchase-order lifecycle, outbound integration and receipt feedback](assets/sainsburys-pom-architecture.svg)
+
+<sub>Simplified view of the wider project architecture, with related components grouped for readability.</sub>
+
+**[Explore the Sainsbury's work overview →](docs/sainsburys-professional-work.md)** — project context, contributions, processing flow and technology roles.
 
 <sub>This section is a high-level overview of my professional contributions.</sub>
 
@@ -69,3 +90,4 @@ I contribute to payment-system integrations and the migration of backend workloa
 - **Confluent Certified Developer for Apache Kafka (CCDAK)** — December 2024
 - **AWS Knowledge: Serverless** badge — March 2025
 - **Reinvention with Agentic AI** badge, Accenture — December 2025
+

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1150" viewBox="0 0 1200 1150" role="img" aria-labelledby="title description">
+  <title id="title">Sainsbury's purchase-order management — professional work at TCS</title>
+  <desc id="description">Simplified functional architecture. Kafka order plans flow through capture and an order-plan store to trigger and generation services. Batch and continuity events trigger generation. A separate Amazon S3 path uses pre-POM processing. Both paths enter the purchase-order lifecycle: validate, enrich and create, execute, track receipts, and close orders. Reference data supports enrichment. Execution publishes Kafka purchase-order topics, which feed transformation and outbound adapters and supplier integrations. Supplier receipts return to receipt tracking. Related components are grouped to show the wider project context.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1727"/>
+      <stop offset="1" stop-color="#162b3a"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#d2e7f8" stroke-opacity="0.025"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#8bd4d1"/>
+    </marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+      .eyebrow { fill: #85cfc9; font-size: 14px; font-weight: 700; letter-spacing: 2px; }
+      .heading { fill: #f4f7fb; font-size: 36px; font-weight: 700; }
+      .subtitle { fill: #b4c7db; font-size: 18px; }
+      .phase { fill: #9bb4ca; font-size: 14px; font-weight: 700; letter-spacing: 1.6px; }
+      .node-title { fill: #f4f7fb; font-size: 20px; font-weight: 700; text-anchor: middle; }
+      .node-detail { fill: #b7cbdf; font-size: 17px; text-anchor: middle; }
+      .input { fill: #193249; stroke: #577b9d; stroke-width: 1.3; }
+      .service { fill: #263341; stroke: #b99762; stroke-width: 1.3; }
+      .stage { fill: #193d43; stroke: #5ca79f; stroke-width: 1.3; }
+      .output { fill: #1c3045; stroke: #577b9d; stroke-width: 1.3; }
+      .edge { fill: none; stroke: #8bd4d1; stroke-width: 2.5; stroke-linejoin: round; marker-end: url(#arrow); }
+      .trigger { stroke-dasharray: 6 5; }
+      .edge-label { fill: #a6c9d3; font-size: 15px; }
+      .footer { fill: #94adbf; font-size: 15px; }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="1148" rx="22" fill="url(#background)" stroke="#496075" stroke-opacity="0.65"/>
+  <rect x="20" y="20" width="1160" height="1110" rx="18" fill="url(#grid)"/>
+  <rect x="48" y="40" width="36" height="4" rx="2" fill="#72e0d3"/>
+  <text class="eyebrow" x="100" y="47">PROFESSIONAL WORK / TCS · SAINSBURY'S</text>
+  <text class="heading" x="48" y="99">Purchase-order management</text>
+  <text class="subtitle" x="49" y="135">Event and file ingestion · Direct-to-store workflows · Supplier integration</text>
+
+  <text class="phase" x="48" y="181">01 / INGEST AND PREPARE</text>
+
+  <!-- Inputs and preparation: three parallel lanes. -->
+  <rect class="input" x="48" y="204" width="330" height="86" rx="12"/>
+  <text class="node-title" x="213" y="240">Kafka order plans</text>
+  <text class="node-detail" x="213" y="267">Upstream planning feed</text>
+
+  <rect class="input" x="435" y="204" width="330" height="86" rx="12"/>
+  <text class="node-title" x="600" y="240">Batch + continuity events</text>
+  <text class="node-detail" x="600" y="267">Processing triggers</text>
+
+  <rect class="input" x="822" y="204" width="330" height="86" rx="12"/>
+  <text class="node-title" x="987" y="240">File-based order plans</text>
+  <text class="node-detail" x="987" y="267">Amazon S3</text>
+
+  <path class="edge" d="M213 290V337"/>
+  <path class="edge trigger" d="M600 290V337"/>
+  <path class="edge" d="M987 290V337"/>
+
+  <rect class="service" x="48" y="340" width="330" height="100" rx="12"/>
+  <text class="node-title" x="213" y="373">Capture service</text>
+  <text class="node-detail" x="213" y="400">Lambda + order-plan store</text>
+  <text class="node-detail" x="213" y="424">Event ingestion</text>
+
+  <rect class="service" x="435" y="340" width="330" height="100" rx="12"/>
+  <text class="node-title" x="600" y="373">Trigger + generation</text>
+  <text class="node-detail" x="600" y="400">Lambda / event triggers</text>
+  <text class="node-detail" x="600" y="424">PO plan and event preparation</text>
+
+  <rect class="service" x="822" y="340" width="330" height="100" rx="12"/>
+  <text class="node-title" x="987" y="373">Pre-POM processing</text>
+  <text class="node-detail" x="987" y="400">Lambda trigger + PRE-POM</text>
+  <text class="node-detail" x="987" y="424">File-based order plans</text>
+
+  <path class="edge" d="M378 390H431"/>
+  <path class="edge" d="M600 440V521"/>
+  <text class="edge-label" x="612" y="487">Kafka PO plans / events</text>
+  <path class="edge" d="M987 440V521"/>
+  <text class="edge-label" x="999" y="487">Prepared plans</text>
+
+  <!-- A grouped lifecycle boundary avoids implying exact runtime service calls. -->
+  <rect x="48" y="525" width="1104" height="300" rx="16" fill="#122c35" stroke="#477d7d" stroke-width="1.5"/>
+  <text x="74" y="565" fill="#c1ece4" font-size="22" font-weight="700">02 / Purchase-order lifecycle</text>
+  <text x="1125" y="565" fill="#92b4ba" font-size="14" text-anchor="end">GROUPED FUNCTIONAL STAGES</text>
+
+  <rect class="stage" x="74" y="615" width="180" height="90" rx="10"/>
+  <text class="node-title" x="164" y="650">Validate</text>
+  <text class="node-detail" x="164" y="678">Order plans</text>
+
+  <rect class="stage" x="286" y="615" width="180" height="90" rx="10"/>
+  <text class="node-title" x="376" y="650">Enrich &amp; create</text>
+  <text class="node-detail" x="376" y="678">Purchase orders</text>
+
+  <rect class="stage" x="498" y="615" width="180" height="90" rx="10"/>
+  <text class="node-title" x="588" y="650">Execute PO</text>
+  <text class="node-detail" x="588" y="678">Downstream flow</text>
+
+  <rect class="stage" x="710" y="615" width="180" height="90" rx="10"/>
+  <text class="node-title" x="800" y="650">Track receipts</text>
+  <text class="node-detail" x="800" y="678">Receipt calculation</text>
+
+  <rect class="stage" x="922" y="615" width="180" height="90" rx="10"/>
+  <text class="node-title" x="1012" y="650">Close orders</text>
+  <text class="node-detail" x="1012" y="678">End-of-day batch</text>
+
+  <path class="edge" d="M254 660H282"/>
+  <path class="edge" d="M466 660H494"/>
+  <path class="edge" d="M678 660H706"/>
+  <path class="edge" d="M890 660H918"/>
+
+  <rect x="286" y="748" width="180" height="55" rx="9" fill="#243747" stroke="#708aa5" stroke-width="1.2"/>
+  <text x="376" y="782" fill="#d2dfec" font-size="18" text-anchor="middle">Reference data</text>
+  <path class="edge" d="M376 748V709"/>
+
+  <!-- Publication and receipt feedback connect to the relevant lifecycle stages. -->
+  <path class="edge" d="M588 705V855H353V914"/>
+  <text class="edge-label" x="370" y="845">PO publication</text>
+  <path class="edge" d="M987 918V855H800V709"/>
+  <text class="edge-label" x="825" y="845">Receipt feedback</text>
+
+  <text class="phase" x="48" y="892">03 / OUTBOUND INTEGRATION</text>
+
+  <rect class="output" x="48" y="918" width="330" height="95" rx="12"/>
+  <text class="node-title" x="213" y="949">Kafka PO topics</text>
+  <text class="node-detail" x="213" y="975">Confirmed / contingency</text>
+  <text class="node-detail" x="213" y="998">purchase orders and events</text>
+
+  <rect class="output" x="435" y="918" width="330" height="95" rx="12"/>
+  <text class="node-title" x="600" y="949">PO transformation</text>
+  <text class="node-detail" x="600" y="975">and outbound adapters</text>
+  <text class="node-detail" x="600" y="998">Legacy integration</text>
+
+  <rect class="output" x="822" y="918" width="330" height="95" rx="12"/>
+  <text class="node-title" x="987" y="949">Supplier / trading</text>
+  <text class="node-title" x="987" y="975">integrations</text>
+  <text class="node-detail" x="987" y="998">Purchase-order delivery</text>
+
+  <path class="edge" d="M378 965H431"/>
+  <path class="edge" d="M213 1013V1050H987V1017"/>
+  <text class="edge-label" x="555" y="1040">PO delivery</text>
+
+  <path d="M48 1080H1152" stroke="#41596d" stroke-opacity="0.65"/>
+  <text class="footer" x="48" y="1108">Solid: data / lifecycle flow · Dashed: trigger · Related components grouped for readability</text>
+  <text class="footer" x="48" y="1131">Portfolio overview · Conceptual project architecture</text>
+  <text x="1152" y="1131" text-anchor="end" fill="#77ccc8" font-size="13" font-weight="700" letter-spacing="1.5">BKD471</text>
+</svg>
