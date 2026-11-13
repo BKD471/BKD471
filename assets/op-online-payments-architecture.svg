@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1430" viewBox="0 0 1200 1430" role="img" aria-labelledby="title desc">
+<title id="title">OP Online Payments — conceptual target Azure architecture</title>
+<desc id="desc">Customers reach the SMN frontend through Application Gateway and WAF. Merchants and internal clerks use Apigee and the payment or merchant APIs to reach the SMN business service. The frontend uses a private API route. Kubernetes CronJobs independently launch billing and cleanup Spring Batch jobs. Application and batch dependencies include PostgreSQL, Redis, Azure Blob Storage, Key Vault and Helm configuration. OP banking APIs and remaining cross-cloud integrations are separate dependencies. This is a grouped target view of the AWS-to-Azure migration.</desc>
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1728"/><stop offset=".55" stop-color="#102138"/><stop offset="1" stop-color="#151c3b"/></linearGradient>
+  <linearGradient id="core" x2="1" y2=".6"><stop stop-color="#103841"/><stop offset="1" stop-color="#122e3b"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#719bb4" stroke-opacity=".035"/></pattern>
+  <marker id="aqua" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#85e1df"/></marker>
+  <marker id="amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#eac37f"/></marker>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#edf4fa}
+    .eyebrow{font-size:14px;letter-spacing:2px;font-weight:700;fill:#85e1df}
+    .heading{font-size:20px;font-weight:700;letter-spacing:.4px;fill:#b8dce9}
+    .label{font-size:20px;font-weight:700}
+    .detail{font-size:17px;fill:#bdd0e2}
+    .small{font-size:15px;fill:#a4becd}
+    .edge{fill:none;stroke:#85e1df;stroke-width:2.3;stroke-linejoin:round}
+  </style>
+</defs>
+<rect x=".7" y=".7" width="1198.6" height="1428.6" rx="24" fill="url(#bg)" stroke="#37577c" stroke-width="1.4"/>
+<rect x="1" y="1" width="1198" height="1428" rx="24" fill="url(#grid)"/>
+<path d="M48 42H82" stroke="#85e1df" stroke-width="4" stroke-linecap="round"/>
+<text class="eyebrow" x="100" y="47">PROFESSIONAL WORK / ACCENTURE · OP BANKING · VAPI</text>
+<text x="48" y="102" font-size="42" font-weight="700">OP Online Payments</text>
+<text class="detail" x="48" y="137" style="font-size:20px">Payment APIs · Merchant flows · AWS-to-Azure modernization</text>
+<rect x="936" y="78" width="216" height="32" rx="16" fill="#20334a" stroke="#4b6d8f"/>
+<text x="1044" y="99" text-anchor="middle" class="small" style="font-size:14px;letter-spacing:.8px;fill:#c9dce9">TARGET AZURE VIEW</text>
+
+<rect x="32" y="166" width="1136" height="374" rx="16" fill="#10243a" stroke="#42658a" stroke-width="1.4"/>
+<text x="54" y="200" class="heading" text-anchor="start" >01 / CHANNELS &amp; ACCESS</text>
+<rect x="32" y="574" width="1136" height="346" rx="16" fill="url(#core)" stroke="#4fcbc6" stroke-width="1.4"/>
+<text x="54" y="608" class="heading" text-anchor="start" >02 / CORE PAYMENT PLATFORM</text>
+<text x="1140" y="608" class="detail" text-anchor="end" >AKS / CASSA target platform</text>
+<rect x="32" y="1010" width="720" height="316" rx="16" fill="#10243a" stroke="#42658a" stroke-width="1.4"/>
+<text x="54" y="1044" class="heading" text-anchor="start" >03 / DATA + CONFIGURATION</text>
+<rect x="790" y="1010" width="378" height="316" rx="16" fill="#10243a" stroke="#42658a" stroke-width="1.4"/>
+<text x="812" y="1044" class="heading" text-anchor="start" >04 / BANKING INTEGRATIONS</text>
+<path d="M204 294V344" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M598 294V344" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M988 294V344" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M788 424V464" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M204 424V550H48V727H64" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M574 524V680" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M344 727H424" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<text x="384" y="687" class="small" text-anchor="middle" style="font-size:14px">via private</text>
+<text x="384" y="705" class="small" text-anchor="middle" style="font-size:14px">Apigee API</text>
+<path d="M972 710V736H888V762" class="edge" style="stroke:#85e1df" stroke-dasharray="6 5" marker-end="url(#aqua)"/>
+<path d="M972 736H1056V762" class="edge" style="stroke:#85e1df" stroke-dasharray="6 5" marker-end="url(#aqua)"/>
+<path d="M574 774V955H392V1010" class="edge" style="stroke:#85e1df" marker-end="url(#aqua)"/>
+<path d="M976 920V955H574" class="edge" style="stroke:#85e1df"/>
+<circle cx="574" cy="955" r="3.5" fill="#85e1df"/>
+<text x="366" y="984" class="small" text-anchor="end" >Application + batch dependencies</text>
+<path d="M724 727H770V1105H810" fill="none" stroke="#112338" stroke-width="7" stroke-linejoin="round"/>
+<path d="M724 727H770V1105H810" class="edge" style="stroke:#eac37f" marker-end="url(#amber)"/>
+<path d="M770 1105V1250H810" class="edge" style="stroke:#eac37f" marker-end="url(#amber)"/>
+<path d="M960 1105H998" class="edge" style="stroke:#eac37f" marker-end="url(#amber)"/>
+<rect x="64" y="218" width="280" height="76" rx="11" fill="#17334e" stroke="#70a4ce" stroke-width="1.4"/>
+<text x="204.0" y="251.0" class="label" text-anchor="middle" style="font-size:20px">Customers</text>
+<text x="204.0" y="275.0" class="detail" text-anchor="middle" style="font-size:17px">Web &amp; mobile</text>
+<rect x="448" y="218" width="300" height="76" rx="11" fill="#17334e" stroke="#70a4ce" stroke-width="1.4"/>
+<text x="598.0" y="251.0" class="label" text-anchor="middle" style="font-size:20px">Merchants</text>
+<text x="598.0" y="275.0" class="detail" text-anchor="middle" style="font-size:17px">Merchant services</text>
+<rect x="848" y="218" width="280" height="76" rx="11" fill="#17334e" stroke="#70a4ce" stroke-width="1.4"/>
+<text x="988.0" y="251.0" class="label" text-anchor="middle" style="font-size:20px">Internal clerks</text>
+<text x="988.0" y="275.0" class="detail" text-anchor="middle" style="font-size:17px">Management access</text>
+<rect x="64" y="344" width="280" height="80" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="204.0" y="379.0" class="label" text-anchor="middle" style="font-size:20px">Application Gateway</text>
+<text x="204.0" y="403.0" class="detail" text-anchor="middle" style="font-size:17px">Azure WAF · web entry</text>
+<rect x="448" y="344" width="680" height="80" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="788.0" y="379.0" class="label" text-anchor="middle" style="font-size:20px">Apigee API Management</text>
+<text x="788.0" y="403.0" class="detail" text-anchor="middle" style="font-size:17px">Merchant and internal API access</text>
+<rect x="448" y="464" width="680" height="60" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="788.0" y="489.0" class="label" text-anchor="middle" style="font-size:20px">API layer</text>
+<text x="788.0" y="513.0" class="detail" text-anchor="middle" style="font-size:17px">Online Payment · Merchant Management · Private Technical API</text>
+<rect x="64" y="680" width="280" height="94" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="204.0" y="722.0" class="label" text-anchor="middle" style="font-size:20px">SMN Frontend</text>
+<text x="204.0" y="746.0" class="detail" text-anchor="middle" style="font-size:17px">CASSA View Service</text>
+<rect x="424" y="680" width="300" height="94" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="574.0" y="722.0" class="label" text-anchor="middle" style="font-size:20px">SMN Service</text>
+<text x="574.0" y="746.0" class="detail" text-anchor="middle" style="font-size:17px">CASSA Business Service</text>
+<rect x="816" y="646" width="312" height="64" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="972.0" y="673.0" class="label" text-anchor="middle" style="font-size:20px">Kubernetes CronJobs</text>
+<text x="972.0" y="697.0" class="detail" text-anchor="middle" style="font-size:17px">Select job and launch pod</text>
+<rect x="816" y="762" width="144" height="82" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="888.0" y="798.0" class="label" text-anchor="middle" style="font-size:18px">MIB billing</text>
+<text x="888.0" y="822.0" class="detail" text-anchor="middle" style="font-size:17px">PTI output</text>
+<rect x="984" y="762" width="144" height="82" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="1056.0" y="798.0" class="label" text-anchor="middle" style="font-size:18px">DB cleanup</text>
+<text x="1056.0" y="822.0" class="detail" text-anchor="middle" style="font-size:17px">Retention</text>
+<text x="972" y="876" class="small" text-anchor="middle" >Separate Spring Batch job pods</text>
+<text x="972" y="900" class="small" text-anchor="middle" >Run → report status → exit</text>
+<rect x="56" y="1066" width="208" height="102" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="160.0" y="1100.0" class="label" text-anchor="middle" style="font-size:20px">PostgreSQL</text>
+<text x="160.0" y="1124.0" class="detail" text-anchor="middle" style="font-size:17px">Online Payments DB</text>
+<text x="160.0" y="1148.0" class="detail" text-anchor="middle" style="font-size:17px">Application state</text>
+<rect x="280" y="1066" width="208" height="102" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="384.0" y="1112.0" class="label" text-anchor="middle" style="font-size:20px">Redis</text>
+<text x="384.0" y="1136.0" class="detail" text-anchor="middle" style="font-size:17px">Sessions / cache</text>
+<rect x="504" y="1066" width="224" height="102" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="616.0" y="1100.0" class="label" text-anchor="middle" style="font-size:19px">Azure Blob Storage</text>
+<text x="616.0" y="1124.0" class="detail" text-anchor="middle" style="font-size:17px">Billing PTI files</text>
+<text x="616.0" y="1148.0" class="detail" text-anchor="middle" style="font-size:17px">Migration from S3</text>
+<rect x="56" y="1200" width="320" height="80" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="216.0" y="1235.0" class="label" text-anchor="middle" style="font-size:20px">Azure Key Vault</text>
+<text x="216.0" y="1259.0" class="detail" text-anchor="middle" style="font-size:17px">Application secrets</text>
+<rect x="400" y="1200" width="328" height="80" rx="11" fill="#13414b" stroke="#65d5cf" stroke-width="1.4"/>
+<text x="564.0" y="1235.0" class="label" text-anchor="middle" style="font-size:19px">Helm / Spring profiles</text>
+<text x="564.0" y="1259.0" class="detail" text-anchor="middle" style="font-size:17px">Deployment configuration</text>
+<rect x="810" y="1060" width="150" height="90" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="885.0" y="1088.0" class="label" text-anchor="middle" style="font-size:18px">OP Apigee</text>
+<text x="885.0" y="1112.0" class="detail" text-anchor="middle" style="font-size:17px">Internal API</text>
+<text x="885.0" y="1136.0" class="detail" text-anchor="middle" style="font-size:17px">management</text>
+<rect x="998" y="1060" width="150" height="90" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="1073.0" y="1100.0" class="label" text-anchor="middle" style="font-size:18px">OP services</text>
+<text x="1073.0" y="1124.0" class="detail" text-anchor="middle" style="font-size:17px">Banking APIs</text>
+<rect x="810" y="1210" width="338" height="80" rx="11" fill="#243444" stroke="#eac37f" stroke-width="1.4"/>
+<text x="979.0" y="1245.0" class="label" text-anchor="middle" style="font-size:19px">Cross-cloud dependencies</text>
+<text x="979.0" y="1269.0" class="detail" text-anchor="middle" style="font-size:17px">OP Lasku · PPTV / PTI exchange</text>
+<path d="M48 1354H1152" stroke="#34506b"/>
+<text x="48" y="1381" class="small" text-anchor="start" >Solid: logical flow / dependency · Dashed: scheduled trigger · Related components grouped</text>
+<text x="48" y="1407" class="small" text-anchor="start" >Portfolio overview · Target design for an ongoing cloud migration</text>
+<text x="1152" y="1407" class="small" text-anchor="end" style="fill:#85e1df;letter-spacing:1.5px">BKD471</text>
+</svg>

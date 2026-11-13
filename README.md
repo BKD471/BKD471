@@ -42,15 +42,25 @@ An e-commerce backend with customer, product, order, payment and notification se
 
 ### OP Online Payments — Vendor API Solution (VAPI)
 
-**Accenture · Corporate banking · Backend modernization**
+**Accenture · Corporate banking · Backend modernization**  
+**Employment: June 2024 – Present**
 
-I contribute to payment-system integrations and the migration of backend workloads from AWS to Azure, with work across application compatibility, storage integration, scheduled processing and deployment preparation. My contribution areas include:
+I contribute to payment-system integrations for **OP Banking, Finland**, and the migration of backend workloads from AWS to Azure. My work spans application compatibility, storage integration, scheduled processing, testing and deployment preparation:
 
 - **Java 21 and Spring Boot 4 modernization**, dependency updates and compatibility changes.
 - **S3-to-Azure Blob Storage migration** as part of the wider cloud migration.
 - API client generation with **OpenAPI Generator and Mustache templates**, plus mocks and integration/migration testing.
-- Billing and database-cleanup batch workloads for **Kubernetes CronJobs**, including JDBC execution locking and idempotent processing.
+- Separate **Spring Batch billing and database-cleanup jobs for Kubernetes CronJobs**, with behavior-preserving tests, explicit failure reporting and documented rerun limits.
+- Banking-calendar integration with **bounded HTTP timeouts, failure-path tests and API-key log protection**.
 - **AKS deployment preparation** using Kubernetes, Helm and Azure Key Vault, alongside API authentication, callback signing and certificate configuration.
+
+#### Architecture overview
+
+![OP Online Payments target Azure architecture: separate web and merchant access paths, SMN frontend and business services, Kubernetes CronJobs, PostgreSQL, Redis, Blob Storage, and banking integrations](assets/op-online-payments-architecture.svg)
+
+<sub>Conceptual target architecture for the AWS-to-Azure migration. Related components are grouped; the overview distinguishes application services, scheduled jobs and external dependencies.</sub>
+
+**[Explore the OP Online Payments work overview →](docs/op-online-payments-professional-work.md)** — architecture, modernization work, batch behavior, testing and execution semantics.
 
 ### Sainsbury's — Purchase Order Management & Direct-to-Store Integration
 
@@ -90,4 +100,5 @@ I worked on Java backend services for Sainsbury's retail systems. The project ar
 - **Confluent Certified Developer for Apache Kafka (CCDAK)** — December 2024
 - **AWS Knowledge: Serverless** badge — March 2025
 - **Reinvention with Agentic AI** badge, Accenture — December 2025
+
 
